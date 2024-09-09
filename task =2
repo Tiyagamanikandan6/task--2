@@ -1,0 +1,201 @@
+1)main class:
+public class Main
+{
+    public static void main(String[] args)
+    {
+        person p =new person("tiyaga",24);
+        System.out.println(p.getName());
+        System.out.println(p.getAge());
+
+    }
+}
+
+Person class:
+public class person
+{
+    private String Name;
+    private  int  age=18;
+    public person (String Name, int age)
+    {
+        this.age = age;
+        this.Name=Name;
+
+    }
+    public String getName()
+    {
+        return Name;
+
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+}
+
+4)
+
+public class main {
+    public static void main(String[] args) {
+
+        Person person = new Person("tiyaga", 24);
+        System.out.println(person);
+
+
+        Employee employee = new Employee("john", 28, "E5", 76000.00);
+        System.out.println(employee);
+    }
+}
+person class:
+public class Person {
+    private String name;
+    private int age;
+
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Person " + name +   "  "+ age ;
+
+
+    }
+}
+Employee class:
+public class Employee extends Person {
+    private String employeeID;
+    private double salary;
+
+
+    public Employee(String name, int age, String employeeID, double salary) {
+
+        super(name, age);
+        this.employeeID = employeeID;
+        this.salary = salary;
+    }
+
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String toString() {
+        return "Employee" + "name='" + getName()  + " age=" + getAge() + " 
+
+        2)
+import java.util.Scanner;
+
+        public class xyz  {
+
+
+            public static double calculateTotalAmount(Product[] products) {
+                double totalAmount = 0;
+                for (Product product : products) {
+                    totalAmount += product.getTotalAmount();
+                }
+                return totalAmount;
+            }
+
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                Product[] products = new Product[5];
+
+
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("Enter details for product " + (i + 1) + ":");
+
+                    System.out.print("Enter Product ID: ");
+                    int pid = scanner.nextInt();
+
+                    System.out.print("Enter Product Price: ");
+                    double price = scanner.nextDouble();
+
+                    System.out.print("Enter Product Quantity: ");
+                    int quantity = scanner.nextInt();
+
+                    products[i] = new Product(pid, price, quantity);
+                }
+
+
+                Product highestPriceProduct = products[0];
+                for (Product product : products) {
+                    if (product.getPrice() > highestPriceProduct.getPrice()) {
+                        highestPriceProduct = product;
+                    }
+                }
+                System.out.println("Product ID with the highest price: " + highestPriceProduct.getPid());
+
+
+                double totalAmount = calculateTotalAmount(products);
+                System.out.println("Total amount spent on all products: $" + totalAmount);
+
+                scanner.close();
+            }
+        }
+
+        product :
+
+        Public class Product {
+            private int pid;
+            private double price;
+            private int quantity;
+
+
+            public Product(int pid, double price, int quantity) {
+                this.pid = pid;
+                this.price = price;
+                this.quantity = quantity;
+            }
+
+
+            public int getPid() {
+                return pid;
+            }
+
+            public double getPrice() {
+                return price;
+            }
+
+            public int getQuantity() {
+                return quantity;
+            }
+
+
+            public double getTotalAmount() {
+                return price * quantity;
+            }
+        }
+
+}
